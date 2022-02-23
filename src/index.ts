@@ -57,7 +57,7 @@ const main = async () => {
     // IPアドレス
     console.log(await getIp().catch(() => ''));
 
-    await rakuten().catch(() => '');
+    // await rakuten().catch(() => '');
 
     await yahoo().catch(() => '');
 

@@ -14,7 +14,7 @@ export const rakuten = async () => {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36'
     );
 
-    await page.goto(
+    const res = await page.goto(
       'https://item.rakuten.co.jp/rakutenmobile-store/iphone-se-2nd_64gb_bundle_shop/',
       { waitUntil: 'networkidle0' }
     );
@@ -30,10 +30,12 @@ export const rakuten = async () => {
       .catch(() => {});
 
     if (ret != '売り切れました') {
-      await notification('rakuten', 'きた', [process.env.EXPO_ID2]);
+      await notification('rakuten', String(res.status), [process.env.EXPO_ID2]);
     }
 
     await browser.close();
+
+    console.log(res.status);
     console.log(ret);
   } catch (error) {
     console.log(error);

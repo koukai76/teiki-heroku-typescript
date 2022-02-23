@@ -6,6 +6,7 @@ import { setusoku } from './genre/setusoku';
 import { drrr } from './genre/drrr';
 import { ch2 } from './genre/2ch';
 import { ch22 } from './genre/2ch2';
+import { rakuten } from './genre/rakuten';
 
 import { DOCUMENT_NYUSOKU_DAY, DOCUMENT_NYUSOKU_PLUS_DAY } from './constant';
 
@@ -55,6 +56,8 @@ const main = async () => {
 
     // IPアドレス
     console.log(await getIp().catch(() => ''));
+
+    await rakuten().catch(() => '');
 
     await yahoo().catch(() => '');
 

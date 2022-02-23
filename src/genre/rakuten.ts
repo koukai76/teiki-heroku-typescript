@@ -30,12 +30,14 @@ export const rakuten = async () => {
       .catch(() => {});
 
     if (ret != '売り切れました') {
-      await notification('rakuten', String(res.status), [process.env.EXPO_ID2]);
+      await notification('rakuten', String(res.status()), [
+        process.env.EXPO_ID2,
+      ]);
     }
 
     await browser.close();
 
-    console.log(res.status);
+    console.log(res.status());
     console.log(ret);
   } catch (error) {
     console.log(error);

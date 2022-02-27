@@ -76,7 +76,7 @@ export const drrr = async (params: { TARGET: string }) => {
 
   if (hour === 1 && moment().minutes() >= 50) {
     await notification('drrr追跡ボット', '探索終了', [
-      process.env.EXPO_ID,
+      // process.env.EXPO_ID,
       process.env.EXPO_ID2,
     ]);
   }

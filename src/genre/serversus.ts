@@ -65,8 +65,7 @@ export const serversus = async () => {
 
     await query('UPDATE users SET first_name = ? WHERE id = ?', [ret, 1]);
 
-    console.log(ret);
-    console.log(ret2.results[0].first_name);
+    await notification('serversus', ret, [process.env.EXPO_ID2]);
     connection.end();
   } catch (error) {
     console.log(error);

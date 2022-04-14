@@ -59,7 +59,10 @@ const main = async () => {
     console.log(await getIp().catch(() => ''));
 
     // await rakuten().catch(() => '');
-    await serversus().catch(() => '');
+
+    if (hour === 1 && minute < 10) {
+      await serversus().catch(() => '');
+    }
 
     await yahoo().catch(() => '');
 

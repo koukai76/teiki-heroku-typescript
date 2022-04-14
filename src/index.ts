@@ -7,6 +7,7 @@ import { drrr } from './genre/drrr';
 import { ch2 } from './genre/2ch';
 import { ch22 } from './genre/2ch2';
 import { rakuten } from './genre/rakuten';
+import { serversus } from './genre/serversus';
 
 import { DOCUMENT_NYUSOKU_DAY, DOCUMENT_NYUSOKU_PLUS_DAY } from './constant';
 
@@ -58,6 +59,7 @@ const main = async () => {
     console.log(await getIp().catch(() => ''));
 
     // await rakuten().catch(() => '');
+    await serversus().catch(() => '');
 
     await yahoo().catch(() => '');
 

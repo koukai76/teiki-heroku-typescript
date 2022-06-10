@@ -66,9 +66,9 @@ const main = async () => {
 
     await yahoo().catch(() => '');
 
-    if (hour >= 22 || hour <= 1) {
-      await drrr({ TARGET: process.env.DRRR_TARGET }).catch(() => '');
-    }
+    // if (hour >= 22 || hour <= 1) {
+    //   await drrr({ TARGET: process.env.DRRR_TARGET }).catch(() => '');
+    // }
 
     if (minute < 10) {
       await setusoku();

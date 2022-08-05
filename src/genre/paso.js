@@ -66,6 +66,7 @@ module.exports = async () => {
       .catch(e => {});
 
     if (res == null) {
+      console.log('paso req fail');
       return;
     }
 
@@ -88,6 +89,8 @@ module.exports = async () => {
       JSON.stringify(result),
       1,
     ]);
+
+    console.log(result);
 
     // 差分を取る
     const diff = result.filter(i => before.indexOf(i) == -1);

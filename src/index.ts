@@ -68,10 +68,12 @@ const main = async () => {
 
     await yahoo().catch(() => '');
 
-    if (hour <= 23 && hour >= 8 && minute < 10) {
-      console.log('paso kita');
-      await paso();
-    }
+    await paso();
+    console.log('paso kita');
+    // if (hour <= 23 && hour >= 8 && minute < 10) {
+    //   console.log('paso kita');
+    //   await paso();
+    // }
 
     // if (hour >= 22 || hour <= 1) {
     //   await drrr({ TARGET: process.env.DRRR_TARGET }).catch(() => '');

@@ -9,6 +9,8 @@ import { ch22 } from './genre/2ch2';
 import { rakuten } from './genre/rakuten';
 import { serversus } from './genre/serversus';
 
+const paso = require('./genre/paso');
+
 import { DOCUMENT_NYUSOKU_DAY, DOCUMENT_NYUSOKU_PLUS_DAY } from './constant';
 
 if (process.env.NODE_ENV === undefined) {
@@ -66,6 +68,12 @@ const main = async () => {
 
     await yahoo().catch(() => '');
 
+    await paso();
+    console.log('paso kita');
+    // if (hour >= 23 || hour <= 8) {
+    //   await paso();
+    // }
+
     // if (hour >= 22 || hour <= 1) {
     //   await drrr({ TARGET: process.env.DRRR_TARGET }).catch(() => '');
     // }
@@ -86,7 +94,6 @@ const main = async () => {
     }
 
     if (minute >= 10 && minute < 20) {
-      await setusoku();
       // ニュー速＋ 日別
       await ch22({
         url: 'http://2ch-ranking.net/index.html?board=newsplus',

@@ -3,7 +3,6 @@
 ```
 EXPO_ID=
 EXPO_ID2=
-EXPO_ID3=
 ```
 
 ### 本番

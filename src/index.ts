@@ -6,7 +6,7 @@ import { setusoku } from './genre/setusoku';
 import { drrr } from './genre/drrr';
 import { ch2 } from './genre/2ch';
 import { ch22 } from './genre/2ch2';
-import { rakuten } from './genre/rakuten';
+// import { rakuten } from './genre/rakuten';
 import { serversus } from './genre/serversus';
 
 const paso = require('./genre/paso');
@@ -71,12 +71,11 @@ const main = async () => {
     // paso
     if (hour <= 23 && hour >= 8 && minute < 10) {
       await paso();
-      console.log('paso kita');
     }
 
-    // if (hour >= 22 || hour <= 1) {
-    //   await drrr({ TARGET: process.env.DRRR_TARGET }).catch(() => '');
-    // }
+    if (hour >= 22 || hour <= 1) {
+      await drrr({ TARGET: process.env.DRRR_TARGET }).catch(() => '');
+    }
 
     if (minute < 10) {
       await setusoku();

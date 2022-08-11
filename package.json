@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "ts": "ts-node",
     "dev": "ts-node src/index"
   },
   "dependencies": {

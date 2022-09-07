@@ -2,7 +2,7 @@ import moment from 'moment';
 const { exec } = require('child_process');
 
 import { yahoo } from './genre/yahoo';
-import { setusoku } from './genre/setusoku';
+// import { setusoku } from './genre/setusoku';
 import { drrr } from './genre/drrr';
 import { ch2 } from './genre/2ch';
 import { ch22 } from './genre/2ch2';
@@ -78,7 +78,8 @@ const main = async () => {
     }
 
     if (minute < 10) {
-      await setusoku();
+      // await setusoku();
+
       // ニュー速＋ 時間別
       await ch2({
         url: 'http://2ch-ranking.net/index.html?board=newsplus',
